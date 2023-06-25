@@ -1,30 +1,18 @@
-/* enum Role {
-    ADMIN,
-    READ_ONLY,
-    AUTHOR
-} */
+let userInput: unknown;
+let userName: string;
 
-/* enum Role {
-    ADMIN = 1,
-    READ_ONLY = "read-only",
-    AUTHOR='t'
-} */
+userInput = 5;
+userInput = 'Saurabh'
 
-enum Role {
-    ADMIN = 5,
-    READ_ONLY, //6
-    AUTHOR //7
+if(typeof userInput === 'string')
+userName = userInput;
+
+function generateError(message:string, code:number):never{
+    //never return type is for, if any function never returns anything, intentionally.
+    throw {//this will end the script
+        message: message,
+        errorCode: code
+    }
 }
 
-const person = {
-    name: "saurabh",
-    age: 34,
-    hobbies: ['sports', 'cooking'],
-    role: Role.ADMIN
-}
-
-console.log(person);
-
-if( person.role === Role.AUTHOR) {
-    console.log('is author');
-}
+generateError('An error occured', 500);
