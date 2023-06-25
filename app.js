@@ -1,15 +1,11 @@
-var person1 = {
-    name: "saurabh",
-    age: 34
-};
 var person = {
     name: "saurabh",
     age: 34,
-    hobbies: ['Sports', 'Cooking']
+    hobbies: ['sports', 'cooking'],
+    role: [1, 'Admin']
+    //tupple, if you know that the element will have only any specific length
 };
 console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toLocaleUpperCase());
-    //console.log(hobby.map()); //ERROR, as hobby is a string, and map works on array
-}
+person.role.push("admin"); //This is wrong but typescript is not able to catch this error.
+//person.role[1] = 3; //as the second element should be string
+//person.role = [2, "author",4]; //wrong, this can only have 2 values

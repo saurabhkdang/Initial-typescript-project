@@ -1,20 +1,21 @@
-const person1: {
+const person: {
     name: string;
     age: number;
+    hobbies: string[];
+    role: [number, string]
+    //Tuple, to only have 2 values with one is number and second is string
 } = {
     name: "saurabh",
-    age: 34
-}
-
-const person = {
-    name: "saurabh",
     age: 34,
-    hobbies: ['Sports', 'Cooking']
+    hobbies: ['sports', 'cooking'],
+    role: [1, 'Admin']
+    //tupple, if you know that the element will have only any specific length
 }
 
 console.log(person.name);
 
-for (const hobby of person.hobbies){
-    console.log(hobby.toLocaleUpperCase());
-    //console.log(hobby.map()); //ERROR, as hobby is a string, and map works on array
-}
+person.role.push("admin"); //This is wrong but typescript is not able to catch this error.
+
+//person.role[1] = 3; //as the second element should be string
+
+//person.role = [2, "author",4]; //wrong, this can only have 2 values
